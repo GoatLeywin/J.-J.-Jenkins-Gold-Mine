@@ -3,22 +3,21 @@
 <head>
   <title>My EmulatorJS Page</title>
   <meta charset="UTF-8">
-  <!-- load the emulator loader -->
+  <!-- Load EmulatorJS loader -->
   <script src="data/loader.js"></script>
 </head>
 <body>
   <h1>Play a Game</h1>
 
-  <!-- Emulator will render here -->
+  <!-- Game loads here -->
   <div id="game"></div>
 
   <script>
-    // REQUIRED config for EmulatorJS
-    EJS_player = "#game";          // the div to load emulator in
-    EJS_gameUrl = "Ruby.GBA";      // path to your ROM
-    EJS_core = "gba";              // emulator core (gba, nes, snes, etc.)
-    EJS_biosUrl = "";              // only needed for some cores (like PSX)
-    EJS_pathtodata = "data/";      // path to the EmulatorJS "data" folder
+    EJS_player = "#game";        // div where game shows
+    EJS_gameUrl = "Ruby.GBA";    // ROM is next to index.html
+    EJS_core = "gba";            // core to use (Game Boy Advance)
+    EJS_biosUrl = "";            // not needed for GBA
+    EJS_pathtodata = "data/";    // points to your data folder
   </script>
 </body>
 </html>
