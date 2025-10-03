@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>My EmulatorJS Page</title>
-  <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
+    <title>Play Ruby</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: black;
+      }
+      #game {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game"></div>
 
-  <script>
-    // set config BEFORE loading loader.js
-    window.EJS_player = "#game";
-    window.EJS_gameUrl = "Ruby.GBA";   // must match exact filename
-    window.EJS_core = "gba";
-    window.EJS_biosUrl = "";
-    window.EJS_pathtodata = "data/";
-  </script>
+    <script>
+      // EmulatorJS config
+      window.EJS_player = "#game";
+      window.EJS_core = "gba"; // using Game Boy Advance core
+      window.EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/"; // use official CDN
+      window.EJS_gameUrl = "https://goatleywin.github.io/J.-J.-Jenkins-Gold-Mine/ruby/Ruby.GBA"; // your ROM file
+    </script>
 
-  <!-- load emulator after config is set -->
-  <script src="data/loader.js"></script>
-</head>
-<body>
-  <h1>Play a Game</h1>
-  <div id="game"></div>
-</body>
+    <!-- EmulatorJS loader -->
+    <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+  </body>
 </html>
