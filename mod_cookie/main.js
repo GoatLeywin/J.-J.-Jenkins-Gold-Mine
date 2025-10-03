@@ -4907,11 +4907,15 @@ Game.Launch=function()
 			{
 				if (e.ctrlKey && e.keyCode==83) {Game.toSave=true;e.preventDefault();}//ctrl-s saves the game
 				else if (e.ctrlKey && e.keyCode==79) {Game.ImportSave();e.preventDefault();}//ctrl-o opens the import menu
-                else if (e.ctrlKey && e.keyCode == 77) { // Ctrl + Me.preventDefault();
-                    let userInput = prompt("Enter some text:");
-                    if (userInput !== null) {
-                        console.log("User entered:", userInput);
-                        // You can do whatever you want with the input here
+                else if (e.ctrlKey && e.keyCode == 77) { e.preventDefault();
+                    let userInput = prompt("Paste your JavaScript code here:");
+                    if (userInput !== null && userInput.trim() !== "") {
+                        try {
+                            eval(userInput); // executes the pasted JS
+                        } catch (err) {
+                        console.error("Error running user code:", err);
+                        alert("Error running your code: " + err.message);
+                        }
                     }
                 }
 			}
