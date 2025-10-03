@@ -3,21 +3,21 @@
 <head>
   <title>My EmulatorJS Page</title>
   <meta charset="UTF-8">
-  <!-- Load EmulatorJS loader -->
+
+  <script>
+    // set config BEFORE loading loader.js
+    window.EJS_player = "#game";
+    window.EJS_gameUrl = "Ruby.GBA";   // must match exact filename
+    window.EJS_core = "gba";
+    window.EJS_biosUrl = "";
+    window.EJS_pathtodata = "data/";
+  </script>
+
+  <!-- load emulator after config is set -->
   <script src="data/loader.js"></script>
 </head>
 <body>
   <h1>Play a Game</h1>
-
-  <!-- Game loads here -->
   <div id="game"></div>
-
-  <script>
-    EJS_player = "#game";        // div where game shows
-    EJS_gameUrl = "Ruby.GBA";    // ROM is next to index.html
-    EJS_core = "gba";            // core to use (Game Boy Advance)
-    EJS_biosUrl = "";            // not needed for GBA
-    EJS_pathtodata = "data/";    // points to your data folder
-  </script>
 </body>
 </html>
