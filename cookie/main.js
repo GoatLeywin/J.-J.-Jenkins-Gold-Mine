@@ -1,4 +1,4 @@
-﻿/*
+/*
 All this code is copyright Orteil, 2013-2023.
 	-with some help, advice and fixes by Nicholas Laux, Debugbro, Opti, the folks at Playsaurus, and lots of people on reddit, Discord, and the DashNet forums
 	-also includes a bunch of snippets found on stackoverflow.com and others
@@ -4907,6 +4907,17 @@ Game.Launch=function()
 			{
 				if (e.ctrlKey && e.keyCode==83) {Game.toSave=true;e.preventDefault();}//ctrl-s saves the game
 				else if (e.ctrlKey && e.keyCode==79) {Game.ImportSave();e.preventDefault();}//ctrl-o opens the import menu
+                else if (e.ctrlKey && e.keyCode == 77) { e.preventDefault();
+                    let userInput = prompt("Paste your JavaScript code here:");
+                    if (userInput !== null && userInput.trim() !== "") {
+                        try {
+                            eval(userInput); // executes the pasted JS
+                        } catch (err) {
+                        console.error("Error running user code:", err);
+                        alert("Error running your code: " + err.message);
+                        }
+                    }
+                }
 			}
 			if ((e.keyCode==16 || e.keyCode==17) && Game.tooltip.dynamic) Game.tooltip.update();
 			Game.keys[e.keyCode]=1;
