@@ -79,40 +79,8 @@ var App=typeof App==='undefined'?0:App;
 		<div><a class="lightblueLink" style="font-weight:bold;" href="https://play.google.com/store/apps/details?id=org.dashnet.cookieclicker" target="_blank" id="topbarMobileCC">Cookie Clicker for Android</a></div>
 		<div><a class="lightblueLink" style="font-weight:bold;" href="https://store.steampowered.com/app/1454400/Cookie_Clicker/" target="_blank" id="topbarSteamCC">Cookie Clicker on Steam</a></div>
 		<div><a href="//orteil.dashnet.org/randomgen/" target="_blank" id="topbarRandomgen">RandomGen</a></div>
-		<!-- New top-right buttons: Change Language + Mods -->
-		<div style="float:right;position:relative;">
-			<div id="tinyglobe" style="position:absolute;top:-4px;width:22px;height:22px;background:url(img/tinyglobeSheet.gif);right:4px;top:4px;pointer-events:none;"></div>
-
-			<!-- Change language link -->
-			<a id="changeLanguage" style="font-variant:small-caps;padding-right:20px;"
-			   onmouseover="INTERVAL_TINYGLOBE=setInterval(function(){var tinyglobe=document.getElementById('tinyglobe');tinyglobe.style.backgroundPosition=(parseInt(tinyglobe.style.backgroundPosition)-22)+'px';},30);"
-			   onmouseout="clearInterval(INTERVAL_TINYGLOBE);">
-			   Change language
-			</a>
-
-			<!-- Mods menu -->
-			<a id="modsButton" style="font-variant:small-caps;padding-left:20px;">Mods</a>
-			<div id="modsDropdown" style="display:none;position:absolute;top:24px;right:0;background:#222;color:#fff;padding:10px;border-radius:5px;box-shadow:0 0 5px #000;z-index:100;">
-				<div><a href="#" style="color:white;">Mod 1</a></div>
-				<div><a href="#" style="color:white;">Mod 2</a></div>
-				<div><a href="#" style="color:white;">Mod 3</a></div>
-			</div>
-		</div>
-
-		<script>
-			// Random globe position
-			document.getElementById('tinyglobe').style.backgroundPosition=(-[0,19,27][Math.floor(Math.random()*3)]*22)+'px';
-
-			// Mods hover functionality
-			const modsBtn = document.getElementById('modsButton');
-			const modsDropdown = document.getElementById('modsDropdown');
-
-			modsBtn.addEventListener('mouseenter', () => { modsDropdown.style.display = 'block'; });
-			modsBtn.addEventListener('mouseleave', () => { modsDropdown.style.display = 'none'; });
-			modsDropdown.addEventListener('mouseenter', () => { modsDropdown.style.display = 'block'; });
-			modsDropdown.addEventListener('mouseleave', () => { modsDropdown.style.display = 'none'; });
-		</script>
-
+		<div><a href="//orteil.dashnet.org/igm/" target="_blank" id="topbarIGM">Idle Game Maker</a></div>
+		<div style="float:right;position:relative;"><div id="tinyglobe" style="position:absolute;top:-4px;width:22px;height:22px;background:url(img/tinyglobeSheet.gif);right:4px;top:4px;pointer-events:none;"></div><a id="changeLanguage" style="font-variant:small-caps;padding-right:20px;" onmouseover="INTERVAL_TINYGLOBE=setInterval(function(){var tinyglobe=document.getElementById('tinyglobe');tinyglobe.style.backgroundPosition=(parseInt(tinyglobe.style.backgroundPosition)-22)+'px';},30);" onmouseout="clearInterval(INTERVAL_TINYGLOBE);">Change language</a><script>document.getElementById('tinyglobe').style.backgroundPosition=(-[0,19,27][Math.floor(Math.random()*3)]*22)+'px';</script></div>
 		<div id="links" class="hoverer">
 			Other versions
 			<div class="hoverable">
